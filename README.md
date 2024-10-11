@@ -1,5 +1,7 @@
 # Dify API Python
 
+[English](README.md) | [中文](README_CN.md)
+
 Dify API Python is a Python implementation for interacting with Dify's API. It provides an easy-to-use interface for making API calls, with support for both streaming and non-streaming responses. The library also includes a method to merge stream responses, making it convenient to use in scenarios where streaming is not well supported.
 
 ## Installation

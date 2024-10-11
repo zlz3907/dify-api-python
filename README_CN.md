@@ -1,10 +1,12 @@
 # Dify API Python
 
+[English](README.md) | [中文](README_CN.md)
+
 Dify API Python 是一个用于与 Dify API 交互的 Python 实现。它提供了一个易于使用的接口来进行 API 调用，支持流式和非流式响应。该库还包括一个合并流式响应的方法，使其在不支持流式传输的场景中也能方便使用。
 
 ## 安装
 
-使用 pip 安装包：
+使用 pip 安装该包：
 
 ```bash
 pip install dify-api-python
