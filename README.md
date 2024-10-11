@@ -114,6 +114,48 @@ response = client.chat_completion_combined(
 print(response)
 ```
 
+### Example Usage
+
+Here's a complete example of how to use the Dify API Python client:
+
+```python
+from dify_api_python import DifyClient
+
+# Initialize DifyClient
+client = DifyClient(api_key='your_api_key', base_url='https://api.dify.ai/v1')
+
+def chat_with_dify(query, user_id="user123", inputs={}):
+    """
+    Chat with Dify API
+    
+    :param query: User's question or input
+    :param user_id: User ID, default is "user123"
+    :param inputs: Additional input parameters, default is an empty dictionary
+    :return: API response
+    """
+    try:
+        response = client.chat_completion_combined(
+            query=query,
+            user=user_id,
+            inputs=inputs
+        )
+        return response
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return None
+
+# Example usage
+if __name__ == "__main__":
+    user_query = "Please explain the basic principles of quantum computing"
+    result = chat_with_dify(user_query)
+    
+    if result:
+        print("Dify's answer:")
+        print(result)
+    else:
+        print("Failed to get an answer")
+```
+
 ## Key Features
 
 - Flexible client initialization (via parameters or config file)

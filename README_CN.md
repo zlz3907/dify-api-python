@@ -1,10 +1,10 @@
 # Dify API Python
 
-Dify API Python 是一个用于与 Dify API 交互的 Python 实现。它提供了一个易于使用的接口来进行 API 调用，支持流式和非流式响应。该库还包含了一个合并流式响应的方法，使其在不支持流式响应的场景中也能方便使用。
+Dify API Python 是一个用于与 Dify API 交互的 Python 实现。它提供了一个易于使用的接口来进行 API 调用，支持流式和非流式响应。该库还包括一个合并流式响应的方法，使其在不支持流式传输的场景中也能方便使用。
 
 ## 安装
 
-使用 pip 安装该包：
+使用 pip 安装包：
 
 ```bash
 pip install dify-api-python
@@ -24,7 +24,7 @@ from dify_api_python import DifyClient
 
 1. 使用参数：
    ```python
-   client = DifyClient(api_key='你的_api_key', base_url='https://api.dify.ai/v1')
+   client = DifyClient(api_key='your_api_key', base_url='https://api.dify.ai/v1')
    ```
 
 2. 使用默认配置文件：
@@ -41,11 +41,11 @@ from dify_api_python import DifyClient
 
 ```ini
 [DEFAULT]
-API_KEY = 你的_api_key
+API_KEY = your_api_key
 BASE_URL = https://api.dify.ai/v1
 ```
 
-注意：如果你通过参数提供 `api_key` 或 `base_url`，它们将覆盖配置文件中的值。
+注意：如果您提供 `api_key` 或 `base_url` 作为参数，它们将覆盖配置文件中的任何值。
 
 ### 进行 API 调用
 
@@ -67,7 +67,7 @@ print(response)
 
 ```python
 for chunk in client.chat_completion(
-    query="给我讲个故事",
+    query="讲个故事",
     user="user123",
     inputs={},
     stream=True
@@ -112,6 +112,48 @@ response = client.chat_completion_combined(
     inputs={}
 )
 print(response)
+```
+
+### 使用示例
+
+以下是如何使用 Dify API Python 客户端的完整示例：
+
+```python
+from dify_api_python import DifyClient
+
+# 初始化DifyClient
+client = DifyClient(api_key='your_api_key', base_url='https://api.dify.ai/v1')
+
+def chat_with_dify(query, user_id="user123", inputs={}):
+    """
+    使用Dify API进行聊天
+    
+    :param query: 用户的问题或输入
+    :param user_id: 用户ID，默认为"user123"
+    :param inputs: 额外的输入参数，默认为空字典
+    :return: API的响应
+    """
+    try:
+        response = client.chat_completion_combined(
+            query=query,
+            user=user_id,
+            inputs=inputs
+        )
+        return response
+    except Exception as e:
+        print(f"发生错误: {str(e)}")
+        return None
+
+# 示例使用
+if __name__ == "__main__":
+    user_query = "请解释一下量子计算的基本原理"
+    result = chat_with_dify(user_query)
+    
+    if result:
+        print("Dify的回答:")
+        print(result)
+    else:
+        print("未能获取到回答")
 ```
 
 ## 主要特性
