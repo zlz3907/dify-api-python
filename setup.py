@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dify-api-python",
-    version="0.1.1",
+    version="0.1.2",
     author="zlz3907",
     author_email="zlz3907@gmail.com",
     description="A Python client for the Dify API",
@@ -14,13 +14,14 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
+    license="Apache License 2.0",
     python_requires=">=3.7",
     install_requires=[
         "requests>=2.25.0",
