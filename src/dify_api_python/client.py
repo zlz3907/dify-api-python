@@ -1,26 +1,19 @@
-import requests
-from sseclient import SSEClient
 import configparser
 import os
 import json
+from .sdk import DifySDK
 
 class DifyClient:
     def __init__(self, api_key=None, base_url=None, config_path=None):
-        self.base_url = base_url
-        self.api_key = api_key
-
         if config_path or (not api_key and not base_url):
             self._load_config(config_path)
-
-        if not self.api_key:
+        
+        if not hasattr(self, 'api_key') or not self.api_key:
             raise ValueError("API_KEY is not set. Please provide it as a parameter or in the configuration file.")
 
-        self.base_url = self.base_url or 'https://api.dify.ai/v1'
-        
-        self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
-        }
+        self.base_url = base_url or getattr(self, 'base_url', 'https://api.dify.ai/v1')
+        self.sdk = DifySDK(self.api_key, self.base_url)
+        self.user_conversations = {}
 
     def _load_config(self, config_path=None):
         config = configparser.ConfigParser()
@@ -30,56 +23,23 @@ class DifyClient:
         
         config.read(config_path)
         
-        self.base_url = self.base_url or config.get('DEFAULT', 'BASE_URL', fallback='https://api.dify.ai/v1')
-        self.api_key = self.api_key or config.get('DEFAULT', 'API_KEY')
-
-    def chat_completion(self, query, user, inputs=None, files=None, conversation_id=None, stream=False):
-        url = f"{self.base_url}/chat-messages"
-        payload = {
-            "query": query,
-            "user": user,
-            "inputs": inputs or {},
-            "response_mode": "streaming" if stream else "blocking",
-            "conversation_id": conversation_id or "",
-            "files": files or []
-        }
-
-        if stream:
-            response = requests.post(url, json=payload, headers=self.headers, stream=True)
-            return SSEClient(response).events()  # 返回可迭代的 events
-        else:
-            response = requests.post(url, json=payload, headers=self.headers)
-            return response.json()
-
-    def text_completion(self, prompt, user_id, inputs=None, stream=False):
-        url = f"{self.base_url}/completion-messages"
-        payload = {
-            "prompt": prompt,
-            "user": user_id,
-            "inputs": inputs or {}
-        }
-
-        if stream:
-            response = requests.post(url, json=payload, headers=self.headers, stream=True)
-            return SSEClient(response).events()  # 返回一个可迭代对象
-        else:
-            response = requests.post(url, json=payload, headers=self.headers)
-            return response.json()
+        self.base_url = config.get('DEFAULT', 'BASE_URL', fallback='https://api.dify.ai/v1')
+        self.api_key = config.get('DEFAULT', 'API_KEY')
 
     def chat_completion_combined(self, query, user, inputs=None, files=None, conversation_id=None):
-        url = f"{self.base_url}/chat-messages"
-        payload = {
-            "query": query,
-            "user": user,
-            "inputs": inputs or {},
-            "response_mode": "streaming",
-            "conversation_id": conversation_id or "",
-            "files": files or []
-        }
+        if not conversation_id:
+            conversation_id = self.user_conversations.get(user)
 
-        response = requests.post(url, json=payload, headers=self.headers, stream=True)
-        client = SSEClient(response)
+        response = self.sdk.chat_message(query, user, inputs, files, conversation_id, stream=True)
+        combined_response = self._process_combined_response(response)
+        
+        # 更新或存储 conversation_id
+        if combined_response["conversation_id"]:
+            self.user_conversations[user] = combined_response["conversation_id"]
+        
+        return combined_response
 
+    def _process_combined_response(self, response):
         combined_response = {
             "answer": "",
             "conversation_id": "",
@@ -90,29 +50,40 @@ class DifyClient:
             "metadata": {}
         }
 
-        for event in client.events():
-            if event.data:
-                data = json.loads(event.data)
-                event_type = data.get("event")
+        for event in response:
+            data = json.loads(event.data)
+            event_type = data.get("event")
 
-                if event_type == "message_end":
-                    combined_response["metadata"] = data.get("metadata", {})
-                    combined_response["conversation_id"] = data.get("conversation_id", "")
-                elif event_type == "agent_message":
-                    combined_response["answer"] += data.get("answer", "")
-                    combined_response["message_id"] = data.get("message_id", "")
-                    combined_response["created_at"] = data.get("created_at", 0)
-                elif event_type == "agent_thought":
-                    combined_response["thoughts"].append({
-                        "thought": data.get("thought", ""),
-                        "observation": data.get("observation", ""),
-                        "tool": data.get("tool", ""),
-                        "tool_input": data.get("tool_input", "")
-                    })
-                elif event_type == "message_file":
-                    combined_response["message_files"].append({
-                        "type": data.get("type", ""),
-                        "url": data.get("url", "")
-                    })
+            if event_type == "message_end":
+                combined_response["metadata"] = data.get("metadata", {})
+                combined_response["conversation_id"] = data.get("conversation_id", "")
+            elif event_type == "agent_message":
+                combined_response["answer"] += data.get("answer", "")
+                combined_response["message_id"] = data.get("message_id", "")
+                combined_response["created_at"] = data.get("created_at", 0)
+            elif event_type == "agent_thought":
+                combined_response["thoughts"].append({
+                    "thought": data.get("thought", ""),
+                    "observation": data.get("observation", ""),
+                    "tool": data.get("tool", ""),
+                    "tool_input": data.get("tool_input", "")
+                })
+            elif event_type == "message_file":
+                combined_response["message_files"].append({
+                    "type": data.get("type", ""),
+                    "url": data.get("url", "")
+                })
 
         return combined_response
+
+    def __getattr__(self, name):
+        return getattr(self.sdk, name)
+
+    def reset_conversation(self, user):
+        """重置指定用户的会话"""
+        if user in self.user_conversations:
+            del self.user_conversations[user]
+
+    def get_conversation_id(self, user):
+        """获取指定用户的会话ID"""
+        return self.user_conversations.get(user)

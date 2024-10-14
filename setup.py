@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name="dify-api-python",
-    version="0.1.2",
+    version="0.1.4",
     author="zlz3907",
     author_email="zlz3907@gmail.com",
     description="A Python client for the Dify API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/zlz3907/dify-api-python",
-    packages=find_packages(where="src"),
     package_dir={"": "src"},
+    packages=find_packages(where="src"),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
