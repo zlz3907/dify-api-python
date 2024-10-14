@@ -7,11 +7,13 @@ class DifyClient:
     def __init__(self, api_key=None, base_url=None, config_path=None):
         if config_path or (not api_key and not base_url):
             self._load_config(config_path)
+        else:
+            self.api_key = api_key
+            self.base_url = base_url or 'https://api.dify.ai/v1'
         
-        if not hasattr(self, 'api_key') or not self.api_key:
+        if not self.api_key:
             raise ValueError("API_KEY is not set. Please provide it as a parameter or in the configuration file.")
 
-        self.base_url = base_url or getattr(self, 'base_url', 'https://api.dify.ai/v1')
         self.sdk = DifySDK(self.api_key, self.base_url)
         self.user_conversations = {}
 

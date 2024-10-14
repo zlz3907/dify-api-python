@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dify-api-python",
-    version="0.1.4",
+    version="0.1.5",
     author="zlz3907",
     author_email="zlz3907@gmail.com",
     description="A Python client for the Dify API",
