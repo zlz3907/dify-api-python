@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README_CN.md)
 
-Dify API Python is a Python implementation for interacting with Dify's API. It provides an easy-to-use interface for making API calls, with support for both streaming and non-streaming responses. The library also includes a method to merge stream responses, making it convenient to use in scenarios where streaming is not well supported.
+Dify API Python is a Python implementation for interacting with Dify's API. It provides an easy-to-use interface for making API calls, with support for both streaming and non-streaming responses.
 
 ## Installation
 
@@ -51,25 +51,49 @@ Note: If you provide `api_key` or `base_url` as parameters, they will override a
 
 ### Making API Calls
 
-#### Chat Completion
+The `DifyClient` class acts as a wrapper for the `DifySDK` class. All methods available in the SDK can be called directly on the client object. Here are the available methods:
 
-For a chat completion request:
+#### Chat Message
 
 ```python
-response = client.chat_completion(
+# Non-streaming
+response = client.chat_message(
     query="Hello, how are you?",
     user="user123",
     inputs={},
+    files=None,
+    conversation_id=None,
     stream=False
 )
 print(response)
+
+# Streaming
+for chunk in client.chat_message(
+    query="Tell me a story",
+    user="user123",
+    inputs={},
+    files=None,
+    conversation_id=None,
+    stream=True
+):
+print(chunk)
 ```
 
-For a streaming chat completion:
+#### Completion Message
 
 ```python
-for chunk in client.chat_completion(
-    query="Tell me a story",
+# Non-streaming
+response = client.completion_message(
+    prompt="Once upon a time",
+    user="user123",
+    inputs={},
+    stream=False
+)
+print(response)
+
+# Streaming
+for chunk in client.completion_message(
+    prompt="Write a poem about",
     user="user123",
     inputs={},
     stream=True
@@ -77,93 +101,108 @@ for chunk in client.chat_completion(
     print(chunk)
 ```
 
-#### Text Completion
-
-For a text completion request:
+#### Stop Chat Completion
 
 ```python
-response = client.text_completion(
-    prompt="Once upon a time",
-    user_id="user123",
-    inputs={},
-    stream=False
-)
-print(response)
+result = client.stop_chat_completion(task_id, user="user123")
 ```
 
-For a streaming text completion:
+#### Get Conversation Messages
 
 ```python
-for chunk in client.text_completion(
-    prompt="Write a poem about",
-    user_id="user123",
-    inputs={},
-    stream=True
-):
-    print(chunk)
+messages = client.get_conversation_messages(conversation_id, user="user123", first_id=None, limit=20)
 ```
 
-#### Combined Chat Completion
-
-For a combined chat completion (merges streaming response):
+#### Get Conversations
 
 ```python
+conversations = client.get_conversations(user="user123", last_id=None, limit=20, pinned=None)
+```
+
+#### Delete Conversation
+
+```python
+result = client.delete_conversation(conversation_id, user="user123")
+```
+
+#### Rename Conversation
+
+```python
+result = client.rename_conversation(conversation_id, name="New Name", user="user123", auto_generate=False)
+```
+
+#### Get Message Feedback
+
+```python
+feedback = client.get_message_feedback(message_id, rating, user="user123")
+```
+
+#### Get Suggested Questions
+
+```python
+questions = client.get_suggested_questions(message_id, user="user123")
+```
+
+#### Audio to Text
+
+```python
+with open('audio.mp3', 'rb') as audio_file:
+    result = client.audio_to_text(audio_file, user="user123")
+```
+
+#### Text to Audio
+
+```python
+audio_content, content_type = client.text_to_audio(text="Hello, world!", message_id=None, user="user123")
+```
+
+#### Get App Parameters
+
+```python
+parameters = client.get_app_parameters(user="user123")
+```
+
+#### Get App Meta
+
+```python
+meta = client.get_app_meta(user="user123")
+```
+
+#### Upload File
+
+```python
+with open('document.pdf', 'rb') as file:
+    result = client.upload_file(file, user="user123")
+```
+
+### Additional Client Methods
+
+The `DifyClient` provides some additional methods:
+
+```python
+# Combined chat completion (merges streaming response)
 response = client.chat_completion_combined(
     query="Explain quantum computing",
     user="user123",
     inputs={}
 )
-print(response)
-```
 
-### Example Usage
+# Reset a user's conversation
+client.reset_conversation("user123")
 
-Here's a complete example of how to use the Dify API Python client:
-
-```python
-from dify_api_python import DifyClient
-
-# Initialize DifyClient
-client = DifyClient(api_key='your_api_key', base_url='https://api.dify.ai/v1')
-
-def chat_with_dify(query, user_id="user123", inputs={}):
-    """
-    Chat with Dify API
-    
-    :param query: User's question or input
-    :param user_id: User ID, default is "user123"
-    :param inputs: Additional input parameters, default is an empty dictionary
-    :return: API response
-    """
-    try:
-        response = client.chat_completion_combined(
-            query=query,
-            user=user_id,
-            inputs=inputs
-        )
-        return response
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        return None
-
-# Example usage
-if __name__ == "__main__":
-    user_query = "Please explain the basic principles of quantum computing"
-    result = chat_with_dify(user_query)
-    
-    if result:
-        print("Dify's answer:")
-        print(result)
-    else:
-        print("Failed to get an answer")
+# Get a user's conversation ID
+conversation_id = client.get_conversation_id("user123")
 ```
 
 ## Key Features
 
 - Flexible client initialization (via parameters or config file)
 - Support for both streaming and non-streaming API calls
-- Method to merge streaming responses
-- Easy-to-use interface for chat and text completions
+- Method to merge streaming responses (`chat_completion_combined`)
+- Easy-to-use interface for all Dify API endpoints
+- Conversation management
+- Audio conversion (text-to-speech and speech-to-text)
+- File upload functionality
 
 ## Contributing
 
