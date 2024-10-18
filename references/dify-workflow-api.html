@@ -1,0 +1,392 @@
+<div class="bg-white grow overflow-hidden"><div class="relative flex flex-col h-full overflow-hidden"><div class="flex items-center justify-between flex-shrink-0 px-6 border-b border-solid py-2 border-b-gray-100"><div class="text-lg font-medium text-gray-900"></div><div class="flex items-center flex-wrap gap-y-1"><div class="flex rounded-lg bg-gray-50 hover:bg-gray-50 py-2 items-center flex-shrink-0 mr-1 w-52 sm:w-80"><div class="flex items-center flex-grow h-5"><div class="ml-2 border border-gray-200 border-solid flex-shrink-0 px-2 py-0.5 rounded-[6px] text-gray-500 text-[0.625rem] style_customApi__VNyIB">API 服务器</div><div class="flex-grow bg-gray-50 text-[13px] relative h-full"><div class="absolute top-0 left-0 w-full pl-2 pr-2 truncate cursor-pointer r-0"><div class="inline-block" data-state="closed">http://wf.zhycit.com/v1</div></div></div><div class="flex-shrink-0 h-4 bg-gray-200 border"></div><div class="px-0.5 flex-shrink-0" data-state="closed"><div class="box-border w-[30px] h-[30px] flex items-center justify-center rounded-lg hover:bg-gray-100 cursor-pointer style_copyIcon__699xb "></div></div></div></div><div class="flex items-center h-9 px-3 rounded-lg 
+                        text-[13px] font-normal  mr-2 text-green-500 bg-green-50"><div class="mr-1">状态</div><div class="font-semibold">运行中</div></div><button type="button" class="btn disabled:btn-disabled btn-secondary btn-medium px-3 flex-shrink-0"><div class="flex items-center justify-center w-4 h-4 mr-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3.66672C9.35362 3.66672 9.69276 3.80719 9.94281 4.05724C10.1929 4.30729 10.3333 4.64643 10.3333 5.00005M13 5.00005C13.0002 5.62483 12.854 6.24097 12.5732 6.79908C12.2924 7.3572 11.8847 7.84177 11.3829 8.21397C10.8811 8.58617 10.2991 8.83564 9.68347 8.94239C9.06788 9.04915 8.43584 9.01022 7.838 8.82872L6.33333 10.3334H5V11.6667H3.66667V13.0001H1.66667C1.48986 13.0001 1.32029 12.9298 1.19526 12.8048C1.07024 12.6798 1 12.5102 1 12.3334V10.6094C1.00004 10.4326 1.0703 10.263 1.19533 10.1381L5.17133 6.16205C5.00497 5.61206 4.95904 5.03268 5.0367 4.46335C5.11435 3.89402 5.31375 3.3481 5.62133 2.86275C5.92891 2.3774 6.33744 1.96401 6.81913 1.65073C7.30082 1.33745 7.84434 1.13162 8.41272 1.04725C8.9811 0.96289 9.56098 1.00197 10.1129 1.16184C10.6648 1.32171 11.1758 1.59861 11.6111 1.97369C12.0464 2.34878 12.3958 2.81324 12.6354 3.33548C12.8751 3.85771 12.9994 4.42545 13 5.00005Z" stroke="#1F2A37" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="text-[13px] text-gray-800 undefined">API 密钥</div></button></div></div><div class="px-4 sm:px-10 py-4 overflow-auto grow"><article class="prose prose-xl"><h1>Workflow 应用 API</h1>
+<p>Workflow 应用无会话支持，适合用于翻译/文章写作/总结 AI 等等。</p>
+<div><h3>Base URL</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Code</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white">http://wf.zhycit.com/v1</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Authentication</h3><p>Dify Service API 使用 <code>API-Key</code> 进行鉴权。
+<i><strong>强烈建议开发者把 <code>API-Key</code> 放在后端存储，而非分享或者放在客户端存储，以免 <code>API-Key</code> 泄露，导致财产损失。</strong></i>
+所有 API 请求都应在 <strong><code>Authorization</code></strong> HTTP Header 中包含您的 <code>API-Key</code>，如下所示：</p><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Code</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-javascript">  Authorization: Bearer {API_KEY}
+
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div>
+<hr>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-sky-300 bg-sky-400/10 text-sky-500 dark:ring-sky-400/30 dark:bg-sky-400/10 dark:text-sky-400">POST</span><span class="font-mono text-xs text-zinc-400">/workflows/run</span></div><h2 class="mt-2 scroll-mt-32"><a href="#Execute-Workflow" class="no-underline group text-inherit hover:text-inherit">执行 workflow</a></h2>
+<div class="grid items-start grid-cols-1 gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>执行 workflow，没有已发布的 workflow，不可执行。</p><h3>Request Body</h3><ul>
+<li><code>inputs</code> (object) Required
+允许传入 App 定义的各变量值。
+inputs 参数包含了多组键值对（Key/Value pairs），每组的键对应一个特定变量，每组的值则是该变量的具体值。</li>
+<li><code>response_mode</code> (string) Required
+返回响应模式，支持：
+<ul>
+<li><code>streaming</code> 流式模式（推荐）。基于 SSE（<strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events">Server-Sent Events</a></strong>）实现类似打字机输出方式的流式返回。</li>
+<li><code>blocking</code> 阻塞模式，等待执行完毕后返回结果。（请求若流程较长可能会被中断）。
+<i>由于 Cloudflare 限制，请求会在 100 秒超时无返回后中断。</i></li>
+</ul>
+</li>
+<li><code>user</code> (string) Required
+用户标识，用于定义终端用户的身份，方便检索、统计。
+由开发者定义规则，需保证用户标识在应用内唯一。</li>
+<li><code>files</code> (array[object]) Optional
+文件列表，适用于传入文件（图片）结合文本理解并回答问题，仅当模型支持 Vision 能力时可用。
+<ul>
+<li><code>type</code> (string) 支持类型：图片 <code>image</code>（目前仅支持图片格式）。</li>
+<li><code>transfer_method</code> (string) 传递方式，<code>remote_url</code> 图片地址 / <code>local_file</code> 上传文件</li>
+<li><code>url</code> (string) 图片地址（仅当传递方式为 <code>remote_url</code> 时）</li>
+<li><code>upload_file_id</code> (string) (string) 上传文件 ID（仅当传递方式为 <code>local_file</code> 时）</li>
+</ul>
+</li>
+</ul><h3>Response</h3><p>当 <code>response_mode</code> 为 <code>blocking</code> 时，返回 CompletionResponse object。
+当 <code>response_mode</code> 为 <code>streaming</code>时，返回 ChunkCompletionResponse object 流式序列。</p><h3>CompletionResponse</h3><p>返回完整的 App 结果，<code>Content-Type</code> 为 <code>application/json</code> 。</p><ul>
+<li><code>workflow_run_id</code> (string) workflow 执行 ID</li>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>data</code> (object) 详细内容
+<ul>
+<li><code>id</code> (string) workflow 执行 ID</li>
+<li><code>workflow_id</code> (string) 关联 Workflow ID</li>
+<li><code>status</code> (string) 执行状态, <code>running</code> / <code>succeeded</code> / <code>failed</code> / <code>stopped</code></li>
+<li><code>outputs</code> (json) Optional 输出内容</li>
+<li><code>error</code> (string) Optional 错误原因</li>
+<li><code>elapsed_time</code> (float) Optional 耗时(s)</li>
+<li><code>total_tokens</code> (int) Optional 总使用 tokens</li>
+<li><code>total_steps</code> (int) 总步数（冗余），默认 0</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+<li><code>finished_at</code> (timestamp) 结束时间</li>
+</ul>
+</li>
+</ul><h3>ChunkCompletionResponse</h3><p>返回 App 输出的流式块，<code>Content-Type</code> 为 <code>text/event-stream</code>。
+每个流式块均为 data: 开头，块之间以 <code>\n\n</code> 即两个换行符分隔，如下所示：</p><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-streaming">data: {"event": "message", "task_id": "900bbd43-dc0b-4383-a372-aa6e6c414227", "id": "663c5084-a254-4040-8ad3-51f2a3c1a77c", "answer": "Hi", "created_at": 1705398420}\n\n
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><p>流式块中根据 <code>event</code> 不同，结构也不同，包含以下类型：</p><ul>
+<li><code>event: workflow_started</code> workflow 开始执行
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>workflow_run_id</code> (string) workflow 执行 ID</li>
+<li><code>event</code> (string) 固定为 <code>workflow_started</code></li>
+<li><code>data</code> (object) 详细内容
+<ul>
+<li><code>id</code> (string) workflow 执行 ID</li>
+<li><code>workflow_id</code> (string) 关联 Workflow ID</li>
+<li><code>sequence_number</code> (int) 自增序号，App 内自增，从 1 开始</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>event: node_started</code> node 开始执行
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>workflow_run_id</code> (string) workflow 执行 ID</li>
+<li><code>event</code> (string) 固定为 <code>node_started</code></li>
+<li><code>data</code> (object) 详细内容
+<ul>
+<li><code>id</code> (string) workflow 执行 ID</li>
+<li><code>node_id</code> (string) 节点 ID</li>
+<li><code>node_type</code> (string) 节点类型</li>
+<li><code>title</code> (string) 节点名称</li>
+<li><code>index</code> (int) 执行序号，用于展示 Tracing Node 顺序</li>
+<li><code>predecessor_node_id</code> (string) 前置节点 ID，用于画布展示执行路径</li>
+<li><code>inputs</code> (array[object]) 节点中所有使用到的前置节点变量内容</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>event: node_finished</code> node 执行结束，成功失败同一事件中不同状态
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>workflow_run_id</code> (string) workflow 执行 ID</li>
+<li><code>event</code> (string) 固定为 <code>node_finished</code></li>
+<li><code>data</code> (object) 详细内容
+<ul>
+<li><code>id</code> (string) node 执行 ID</li>
+<li><code>node_id</code> (string) 节点 ID</li>
+<li><code>index</code> (int) 执行序号，用于展示 Tracing Node 顺序</li>
+<li><code>predecessor_node_id</code> (string) optional 前置节点 ID，用于画布展示执行路径</li>
+<li><code>inputs</code> (array[object]) 节点中所有使用到的前置节点变量内容</li>
+<li><code>process_data</code> (json) Optional 节点过程数据</li>
+<li><code>outputs</code> (json) Optional 输出内容</li>
+<li><code>status</code> (string) 执行状态 <code>running</code> / <code>succeeded</code> / <code>failed</code> / <code>stopped</code></li>
+<li><code>error</code> (string) Optional 错误原因</li>
+<li><code>elapsed_time</code> (float) Optional 耗时(s)</li>
+<li><code>execution_metadata</code> (json) 元数据
+<ul>
+<li><code>total_tokens</code> (int) optional 总使用 tokens</li>
+<li><code>total_price</code> (decimal) optional 总费用</li>
+<li><code>currency</code> (string) optional 货币，如 <code>USD</code> / <code>RMB</code></li>
+</ul>
+</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>event: workflow_finished</code> workflow 执行结束，成功失败同一事件中不同状态
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>workflow_run_id</code> (string) workflow 执行 ID</li>
+<li><code>event</code> (string) 固定为 <code>workflow_finished</code></li>
+<li><code>data</code> (object) 详细内容
+<ul>
+<li><code>id</code> (string) workflow 执行 ID</li>
+<li><code>workflow_id</code> (string) 关联 Workflow ID</li>
+<li><code>status</code> (string)  执行状态 <code>running</code> / <code>succeeded</code> / <code>failed</code> / <code>stopped</code></li>
+<li><code>outputs</code> (json) Optional 输出内容</li>
+<li><code>error</code> (string) Optional 错误原因</li>
+<li><code>elapsed_time</code> (float) Optional 耗时(s)</li>
+<li><code>total_tokens</code> (int) Optional 总使用 tokens</li>
+<li><code>total_steps</code> (int) 总步数（冗余），默认 0</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+<li><code>finished_at</code> (timestamp) 结束时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>event: tts_message</code> TTS 音频流事件，即：语音合成输出。内容是Mp3格式的音频块，使用 base64 编码后的字符串，播放的时候直接解码即可。(开启自动播放才有此消息)
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>message_id</code> (string) 消息唯一 ID</li>
+<li><code>audio</code> (string) 语音合成之后的音频块使用 Base64 编码之后的文本内容，播放的时候直接 base64 解码送入播放器即可</li>
+<li><code>created_at</code> (int) 创建时间戳，如：1705395332</li>
+</ul>
+</li>
+<li><code>event: tts_message_end</code> TTS 音频流结束事件，收到这个事件表示音频流返回结束。
+<ul>
+<li><code>task_id</code> (string) 任务 ID，用于请求跟踪和下方的停止响应接口</li>
+<li><code>message_id</code> (string) 消息唯一 ID</li>
+<li><code>audio</code> (string) 结束事件是没有音频的，所以这里是空字符串</li>
+<li><code>created_at</code> (int) 创建时间戳，如：1705395332</li>
+</ul>
+</li>
+<li><code>event: ping</code> 每 10s 一次的 ping 事件，保持连接存活。</li>
+</ul><h3>Errors</h3><ul>
+<li>400，<code>invalid_param</code>，传入参数异常</li>
+<li>400，<code>app_unavailable</code>，App 配置不可用</li>
+<li>400，<code>provider_not_initialize</code>，无可用模型凭据配置</li>
+<li>400，<code>provider_quota_exceeded</code>，模型调用额度不足</li>
+<li>400，<code>model_currently_not_support</code>，当前模型不可用</li>
+<li>400，<code>workflow_request_error</code>，workflow 执行失败</li>
+<li>500，服务内部异常</li>
+</ul></div><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0 xl:sticky xl:top-24"><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Request</h3></div><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-t-transparent border-b-white/7.5 bg-zinc-900 bg-white/2.5 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="flex dark"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-sky-500">POST</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/workflows/run</span></div><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white">curl -X POST 'http://wf.zhycit.com/v1/workflows/run' \
+--header 'Authorization: Bearer {api_key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "inputs": {},
+    "response_mode": "streaming",
+    "user": "abc-123"
+}'
+</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Blocking Mode</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-json">{
+    "workflow_run_id": "djflajgkldjgd",
+    "task_id": "9da23599-e713-473b-982c-4328d4f5c78a",
+    "data": {
+        "id": "fdlsjfjejkghjda",
+        "workflow_id": "fldjaslkfjlsda",
+        "status": "succeeded",
+        "outputs": {
+          "text": "Nice to meet you."
+        },
+        "error": null,
+        "elapsed_time": 0.875,
+        "total_tokens": 3562,
+        "total_steps": 8,
+        "created_at": 1705407629,
+        "finished_at": 1727807631
+    }
+}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Streaming Mode</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-streaming">  data: {"event": "workflow_started", "task_id": "5ad4cb98-f0c7-4085-b384-88c403be6290", "workflow_run_id": "5ad498-f0c7-4085-b384-88cbe6290", "data": {"id": "5ad498-f0c7-4085-b384-88cbe6290", "workflow_id": "dfjasklfjdslag", "sequence_number": 1, "created_at": 1679586595}}
+  data: {"event": "node_started", "task_id": "5ad4cb98-f0c7-4085-b384-88c403be6290", "workflow_run_id": "5ad498-f0c7-4085-b384-88cbe6290", "data": {"id": "5ad498-f0c7-4085-b384-88cbe6290", "node_id": "dfjasklfjdslag", "node_type": "start", "title": "Start", "index": 0, "predecessor_node_id": "fdljewklfklgejlglsd", "inputs": {}, "created_at": 1679586595}}
+  data: {"event": "node_finished", "task_id": "5ad4cb98-f0c7-4085-b384-88c403be6290", "workflow_run_id": "5ad498-f0c7-4085-b384-88cbe6290", "data": {"id": "5ad498-f0c7-4085-b384-88cbe6290", "node_id": "dfjasklfjdslag", "node_type": "start", "title": "Start", "index": 0, "predecessor_node_id": "fdljewklfklgejlglsd", "inputs": {}, "outputs": {}, "status": "succeeded", "elapsed_time": 0.324, "execution_metadata": {"total_tokens": 63127864, "total_price": 2.378, "currency": "USD"},  "created_at": 1679586595}}
+  data: {"event": "workflow_finished", "task_id": "5ad4cb98-f0c7-4085-b384-88c403be6290", "workflow_run_id": "5ad498-f0c7-4085-b384-88cbe6290", "data": {"id": "5ad498-f0c7-4085-b384-88cbe6290", "workflow_id": "dfjasklfjdslag", "outputs": {}, "status": "succeeded", "elapsed_time": 0.324, "total_tokens": 63127864, "total_steps": "1", "created_at": 1679586595, "finished_at": 1679976595}}
+  data: {"event": "tts_message", "conversation_id": "23dd85f3-1a41-4ea0-b7a9-062734ccfaf9", "message_id": "a8bdc41c-13b2-4c18-bfd9-054b9803038c", "created_at": 1721205487, "task_id": "3bf8a0bb-e73b-4690-9e66-4e429bad8ee7", "audio": "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"}
+  data: {"event": "tts_message_end", "conversation_id": "23dd85f3-1a41-4ea0-b7a9-062734ccfaf9", "message_id": "a8bdc41c-13b2-4c18-bfd9-054b9803038c", "created_at": 1721205487, "task_id": "3bf8a0bb-e73b-4690-9e66-4e429bad8ee7", "audio": ""}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div>
+<hr>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-emerald-300 dark:ring-emerald-400/30 bg-emerald-400/10 text-emerald-500 dark:text-emerald-400">GET</span><span class="font-mono text-xs text-zinc-400">/workflows/run/:workflow_id</span></div><h2 class="mt-2 scroll-mt-32"><a href="#get-workflow-run-detail" class="no-underline group text-inherit hover:text-inherit">获取workflow执行情况</a></h2>
+<div class="grid items-start grid-cols-1 gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>根据 workflow 执行 ID 获取 workflow 任务当前执行结果</p><h3>Path</h3><ul>
+<li><code>workflow_id</code> (string) workflow 执行 ID，可在流式返回 Chunk 中获取</li>
+</ul><h3>Response</h3><ul>
+<li><code>id</code> (string) workflow 执行 ID</li>
+<li><code>workflow_id</code> (string) 关联的 Workflow ID</li>
+<li><code>status</code> (string) 执行状态 <code>running</code> / <code>succeeded</code> / <code>failed</code> / <code>stopped</code></li>
+<li><code>inputs</code> (json) 任务输入内容</li>
+<li><code>outputs</code> (json) 任务输出内容</li>
+<li><code>error</code> (string) 错误原因</li>
+<li><code>total_steps</code> (int) 任务执行总步数</li>
+<li><code>total_tokens</code> (int) 任务执行总 tokens</li>
+<li><code>created_at</code> (timestamp) 任务开始时间</li>
+<li><code>finished_at</code> (timestamp) 任务结束时间</li>
+<li><code>elapsed_time</code> (float) 耗时(s)</li>
+</ul></div><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0 xl:sticky xl:top-24"><h3>Request Example</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Request</h3></div><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-t-transparent border-b-white/7.5 bg-zinc-900 bg-white/2.5 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="flex dark"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-emerald-500 dark:text-emerald-400">GET</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/workflows/run/:workflow_id</span></div><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white">curl -X GET 'http://wf.zhycit.com/v1/workflows/run/:workflow_id' \
+-H 'Authorization: Bearer {api_key}' \
+-H 'Content-Type: application/json'</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Response Example</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-json">{
+    "id": "b1ad3277-089e-42c6-9dff-6820d94fbc76",
+    "workflow_id": "19eff89f-ec03-4f75-b0fc-897e7effea02",
+    "status": "succeeded",
+    "inputs": "{\"sys.files\": [], \"sys.user_id\": \"abc-123\"}",
+    "outputs": null,
+    "error": null,
+    "total_steps": 3,
+    "total_tokens": 0,
+    "created_at": "Thu, 18 Jul 2024 03:17:40 -0000",
+    "finished_at": "Thu, 18 Jul 2024 03:18:10 -0000",
+    "elapsed_time": 30.098514399956912
+}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div>
+<hr>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-sky-300 bg-sky-400/10 text-sky-500 dark:ring-sky-400/30 dark:bg-sky-400/10 dark:text-sky-400">POST</span><span class="font-mono text-xs text-zinc-400">/workflows/tasks/:task_id/stop</span></div><h2 class="mt-2 scroll-mt-32"><a href="#stop-generatebacks" class="no-underline group text-inherit hover:text-inherit">停止响应</a></h2>
+<div class="grid items-start grid-cols-1 gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>仅支持流式模式。</p><h3>Path</h3><ul>
+<li><code>task_id</code> (string) 任务 ID，可在流式返回 Chunk 中获取</li>
+</ul><h3>Request Body</h3><ul>
+<li><code>user</code> (string) Required
+用户标识，用于定义终端用户的身份，必须和发送消息接口传入 user 保持一致。</li>
+</ul><h3>Response</h3><ul>
+<li><code>result</code> (string) 固定返回 "success"</li>
+</ul></div><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0 xl:sticky xl:top-24"><h3>Request Example</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Request</h3></div><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-t-transparent border-b-white/7.5 bg-zinc-900 bg-white/2.5 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="flex dark"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-sky-500">POST</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/workflows/tasks/:task_id/stop</span></div><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white">curl -X POST 'http://wf.zhycit.com/v1/workflows/tasks/:task_id/stop' \
+-H 'Authorization: Bearer {api_key}' \
+-H 'Content-Type: application/json' \
+--data-raw '{"user": "abc-123"}'</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Response Example</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-json">{
+  "result": "success"
+}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div>
+<hr>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-emerald-300 dark:ring-emerald-400/30 bg-emerald-400/10 text-emerald-500 dark:text-emerald-400">GET</span><span class="font-mono text-xs text-zinc-400">/parameters</span></div><h2 class="mt-2 scroll-mt-32"><a href="#parameters" class="no-underline group text-inherit hover:text-inherit">获取应用配置信息</a></h2>
+<div class="grid items-start grid-cols-1 gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>用于进入页面一开始，获取功能开关、输入参数名称、类型及默认值等使用。</p><h3>Query</h3><div class="my-6"><ul role="list" class="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-zinc-900/5 p-0 dark:divide-white/5"><li class="px-0 py-4 m-0 first:pt-0 last:pb-0"><dl class="flex flex-wrap items-center m-0 gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>user</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>用户标识，由开发者定义规则，需保证用户标识在应用内唯一。</p></dd></dl></li></ul></div><h3>Response</h3><ul>
+<li><code>user_input_form</code> (array[object]) 用户输入表单配置
+<ul>
+<li><code>text-input</code> (object) 文本输入控件
+<ul>
+<li><code>label</code> (string) 控件展示标签名</li>
+<li><code>variable</code> (string) 控件 ID</li>
+<li><code>required</code> (bool) 是否必填</li>
+<li><code>default</code> (string) 默认值</li>
+</ul>
+</li>
+<li><code>paragraph</code> (object) 段落文本输入控件
+<ul>
+<li><code>label</code> (string) 控件展示标签名</li>
+<li><code>variable</code> (string) 控件 ID</li>
+<li><code>required</code> (bool) 是否必填</li>
+<li><code>default</code> (string) 默认值</li>
+</ul>
+</li>
+<li><code>select</code> (object) 下拉控件
+<ul>
+<li><code>label</code> (string) 控件展示标签名</li>
+<li><code>variable</code> (string) 控件 ID</li>
+<li><code>required</code> (bool) 是否必填</li>
+<li><code>default</code> (string) 默认值</li>
+<li><code>options</code> (array[string]) 选项值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>file_upload</code> (object) 文件上传配置
+<ul>
+<li><code>image</code> (object) 图片设置
+当前仅支持图片类型：<code>png</code>, <code>jpg</code>, <code>jpeg</code>, <code>webp</code>, <code>gif</code>
+<ul>
+<li><code>enabled</code> (bool) 是否开启</li>
+<li><code>number_limits</code> (int) 图片数量限制，默认 3</li>
+<li><code>transfer_methods</code> (array[string]) 传递方式列表，remote_url , local_file，必选一个</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>system_parameters</code> (object) 系统参数
+<ul>
+<li><code>image_file_size_limit</code> (string) 图片文件上传大小限制（MB）</li>
+</ul>
+</li>
+</ul></div><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0 xl:sticky xl:top-24"><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Request</h3></div><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-t-transparent border-b-white/7.5 bg-zinc-900 bg-white/2.5 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="flex dark"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-emerald-500 dark:text-emerald-400">GET</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/parameters</span></div><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"> curl -X GET 'http://wf.zhycit.com/v1/parameters?user=abc-123'</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-json">{
+  "user_input_form": [
+      {
+          "paragraph": {
+              "label": "Query",
+              "variable": "query",
+              "required": true,
+              "default": ""
+          }
+      }
+  ],
+  "file_upload": {
+      "image": {
+          "enabled": false,
+          "number_limits": 3,
+          "detail": "high",
+          "transfer_methods": [
+              "remote_url",
+              "local_file"
+          ]
+      }
+  },
+  "system_parameters": {
+      "image_file_size_limit": "10"
+  }
+}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div>
+<hr>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-emerald-300 dark:ring-emerald-400/30 bg-emerald-400/10 text-emerald-500 dark:text-emerald-400">GET</span><span class="font-mono text-xs text-zinc-400">/workflows/logs</span></div><h2 class="mt-2 scroll-mt-32"><a href="#Get-Workflow-Logs" class="no-underline group text-inherit hover:text-inherit">获取 workflow 日志</a></h2>
+<div class="grid items-start grid-cols-1 gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>倒序返回workflow日志</p><h3>Query</h3><div class="my-6"><ul role="list" class="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-zinc-900/5 p-0 dark:divide-white/5"><li class="px-0 py-4 m-0 first:pt-0 last:pb-0"><dl class="flex flex-wrap items-center m-0 gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>keyword</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>关键字</p></dd></dl></li><li class="px-0 py-4 m-0 first:pt-0 last:pb-0"><dl class="flex flex-wrap items-center m-0 gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>status</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>执行状态 succeeded/failed/stopped</p></dd></dl></li><li class="px-0 py-4 m-0 first:pt-0 last:pb-0"><dl class="flex flex-wrap items-center m-0 gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>page</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">int</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>当前页码, 默认1.</p></dd></dl></li><li class="px-0 py-4 m-0 first:pt-0 last:pb-0"><dl class="flex flex-wrap items-center m-0 gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>limit</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">int</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0"><p>每页条数, 默认20.</p></dd></dl></li></ul></div><h3>Response</h3><ul>
+<li><code>page</code> (int) 当前页码</li>
+<li><code>limit</code> (int) 每页条数</li>
+<li><code>total</code> (int) 总条数</li>
+<li><code>has_more</code> (bool) 是否还有更多数据</li>
+<li><code>data</code> (array[object]) 当前页码的数据
+<ul>
+<li><code>id</code> (string) 标识</li>
+<li><code>workflow_run</code> (object) Workflow 执行日志
+<ul>
+<li><code>id</code> (string) 标识</li>
+<li><code>version</code> (string) 版本</li>
+<li><code>status</code> (string) 执行状态, <code>running</code> / <code>succeeded</code> / <code>failed</code> / <code>stopped</code></li>
+<li><code>error</code> (string) (可选) 错误</li>
+<li><code>elapsed_time</code> (float) 耗时，单位秒</li>
+<li><code>total_tokens</code> (int) 消耗的token数量</li>
+<li><code>total_steps</code> (int) 执行步骤长度</li>
+<li><code>created_at</code> (timestamp) 开始时间</li>
+<li><code>finished_at</code> (timestamp) 结束时间</li>
+</ul>
+</li>
+<li><code>created_from</code> (string) 来源</li>
+<li><code>created_by_role</code> (string) 角色</li>
+<li><code>created_by_account</code> (string) (可选) 帐号</li>
+<li><code>created_by_end_user</code> (object) 用户
+<ul>
+<li><code>id</code> (string) 标识</li>
+<li><code>type</code> (string) 类型</li>
+<li><code>is_anonymous</code> (bool) 是否匿名</li>
+<li><code>session_id</code> (string) 会话标识</li>
+</ul>
+</li>
+<li><code>created_at</code> (timestamp) 创建时间</li>
+</ul>
+</li>
+</ul></div><div class="[&amp;>:first-child]:mt-0 [&amp;>:last-child]:mb-0 xl:sticky xl:top-24"><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Request</h3></div><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-t-transparent border-b-white/7.5 bg-zinc-900 bg-white/2.5 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="flex dark"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-emerald-500 dark:text-emerald-400">GET</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/workflows/logs</span></div><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white">curl -X GET 'http://wf.zhycit.com/v1/workflows/logs'\
+ --header 'Authorization: Bearer {api_key}'</pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><h3>Response Example</h3><div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="pt-3 mr-auto text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="p-4 overflow-x-auto text-xs text-white"><pre><code class="language-json">{
+    "page": 1,
+    "limit": 1,
+    "total": 7,
+    "has_more": true,
+    "data": [
+        {
+            "id": "e41b93f1-7ca2-40fd-b3a8-999aeb499cc0",
+            "workflow_run": {
+                "id": "c0640fc8-03ef-4481-a96c-8a13b732a36e",
+                "version": "2024-08-01 12:17:09.771832",
+                "status": "succeeded",
+                "error": null,
+                "elapsed_time": 1.3588523610014818,
+                "total_tokens": 0,
+                "total_steps": 3,
+                "created_at": 1726139643,
+                "finished_at": 1726139644
+            },
+            "created_from": "service-api",
+            "created_by_role": "end_user",
+            "created_by_account": null,
+            "created_by_end_user": {
+                "id": "7f7d9117-dd9d-441d-8970-87e5e7e687a3",
+                "type": "service_api",
+                "is_anonymous": false,
+                "session_id": "abc-123"
+            },
+            "created_at": 1726139644
+        }
+    ]
+}
+</code></pre></pre><button type="button" class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div></article></div></div></div>
